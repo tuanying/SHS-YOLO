@@ -11,8 +11,6 @@ import torch
 import torch.nn as nn
 
 from ultralytics.nn.autobackend import check_class_names
-from ultralytics.nn.modules.attention import SCSA
-from ultralytics.nn.modules.HPA import SPPH
 from ultralytics.nn.modules import (
     AIFI,
     C1,
@@ -71,6 +69,8 @@ from ultralytics.nn.modules import (
     YOLOESegment,
     v10Detect,
 )
+from ultralytics.nn.modules.attention import SCSA
+from ultralytics.nn.modules.HPA import SPPH
 from ultralytics.utils import DEFAULT_CFG_DICT, DEFAULT_CFG_KEYS, LOGGER, YAML, colorstr, emojis
 from ultralytics.utils.checks import check_requirements, check_suffix, check_yaml
 from ultralytics.utils.loss import (
@@ -1596,7 +1596,7 @@ def parse_model(d, ch, verbose=True):
             C2fCIB,
             A2C2f,
             SCSA,
-            SPPH
+            SPPH,
         }
     )
     repeat_modules = frozenset(  # modules with 'repeat' arguments
