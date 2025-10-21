@@ -12,7 +12,7 @@ import torch.nn as nn
 
 from ultralytics.nn.autobackend import check_class_names
 from ultralytics.nn.modules.attention import SCSA
-from ultralytics.nn.modules.SPPH import SPPH
+from ultralytics.nn.modules.HPA_SPPF import HPA_SPPF
 from ultralytics.nn.modules import (
     AIFI,
     C1,
