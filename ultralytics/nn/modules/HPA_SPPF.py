@@ -44,7 +44,7 @@ class HPA(nn.Module):
         weights = (torch.matmul(x12, y11) + torch.matmul(y12, x11)).reshape(b * self.groups, 1, h, w)
         return (group_x * weights.sigmoid()).reshape(b, c, h, w)
 
-class SPPH(nn.Module):
+class HPA_SPPF(nn.Module):
     # Because HPA-SPPF is illegal, so we called SPPH.
     # Spatial Pyramid Pooling - Fast (SPPF) layer for YOLOv5 by Glenn Jocher
     def __init__(self, c1, c2, k=5):  # 相较SPP的5、9、13的池化核，SPPF只有5*5的核
